@@ -1,0 +1,608 @@
+---
+import '../styles/global.css';
+
+const values = [
+	{
+		title: 'Personalizacion',
+		body: 'Control del sonido a nivel global, por playlist, por cancion y por segmentos como intro, coro o puente.',
+	},
+	{
+		title: 'Innovacion',
+		body: 'Uso de un agente de inteligencia artificial para transformar indicaciones simples en configuraciones de audio precisas.',
+	},
+	{
+		title: 'Simplicidad',
+		body: 'Ajustes complejos de ecualizacion explicados en una experiencia clara, visual y facil de usar.',
+	},
+	{
+		title: 'Accesibilidad',
+		body: 'Preferencias, biblioteca y configuraciones disponibles en web, escritorio y movil con sincronizacion consistente.',
+	},
+];
+
+const purposeCards = [
+	{
+		id: 'mission',
+		label: 'Mision',
+		display: 'Mision',
+		accent: 'text-pulse',
+		title: 'Democratizar el audio personalizado',
+		body: 'Desarrollar una aplicacion multiplataforma que acerque experiencias sonoras de alta calidad al usuario comun, eliminando la barrera tecnica de la ingenieria de audio.',
+		backLabel: 'Proposito',
+	},
+	{
+		id: 'vision',
+		label: 'Vision',
+		display: 'Vision',
+		accent: 'text-cyan',
+		title: 'Transformar la escucha digital',
+		body: 'Permitir que cada cancion, genero o seccion musical reciba el tratamiento sonoro que necesita para disfrutarse con mayor precision y personalidad.',
+		backLabel: 'Destino',
+	},
+	{
+		id: 'values',
+		label: 'Valores',
+		display: 'Valores',
+		accent: 'text-vinyl',
+		title: 'Personalizacion, innovacion, simplicidad y accesibilidad',
+		body: 'MusicFlow prioriza control granular del sonido, IA para simplificar ajustes tecnicos, claridad de uso y sincronizacion entre web, escritorio y movil.',
+		backLabel: 'Cultura',
+	},
+];
+
+const problems = [
+	{
+		icon: 'eq',
+		title: 'Ecualizacion limitada',
+		body: 'La mayoria de apps aplica un solo perfil global y no considera que cada genero, cancion o seccion necesita un tratamiento diferente.',
+	},
+	{
+		icon: 'knob',
+		title: 'Barrera tecnica',
+		body: 'Configurar un ecualizador de 10 bandas requiere conocimientos de audio, por eso muchos usuarios terminan usando presets genericos.',
+	},
+	{
+		icon: 'ai',
+		title: 'Sin IA integrada',
+		body: 'Las plataformas actuales no suelen permitir pedir cambios con lenguaje natural como "mas bajos en el coro" o "un sonido mas calido".',
+	},
+];
+
+const solutionFeatures = [
+	{
+		icon: 'sliders',
+		title: 'EQ de 10 bandas',
+		body: 'Motor de audio en tiempo real con frecuencias desde 31Hz hasta 16kHz y rango de ajuste de -15dB a +15dB.',
+	},
+	{
+		icon: 'timeline',
+		title: 'Segmentos temporales',
+		body: 'Perfiles distintos para intro, estrofa, coro o puente, con transiciones suaves entre configuraciones.',
+	},
+	{
+		icon: 'spark',
+		title: 'Asistente con IA',
+		body: 'Un agente interpreta tus instrucciones y genera ajustes optimos sin que tengas que mover cada banda manualmente.',
+	},
+	{
+		icon: 'sync',
+		title: 'Biblioteca sincronizada',
+		body: 'Canciones, playlists, historial y preferencias viajan entre web, desktop y mobile.',
+	},
+];
+
+const competitors = [
+	{
+		name: 'Spotify',
+		features: {
+			lossless: false,
+			eq: true,
+			multilevel: false,
+			customUi: false,
+			crossPlatform: true,
+		},
+	},
+	{
+		name: 'YT Music',
+		features: {
+			lossless: false,
+			eq: false,
+			multilevel: false,
+			customUi: false,
+			crossPlatform: true,
+		},
+	},
+	{
+		name: 'Deezer',
+		features: {
+			lossless: true,
+			eq: false,
+			multilevel: false,
+			customUi: false,
+			crossPlatform: true,
+		},
+	},
+	{
+		name: 'MusicFlow',
+		highlight: true,
+		features: {
+			lossless: true,
+			eq: true,
+			multilevel: true,
+			customUi: true,
+			aiAssistant: true,
+			temporalSegments: true,
+			crossPlatform: true,
+		},
+	},
+];
+
+const featureRows = [
+	{ key: 'lossless', label: 'Audio WAV/FLAC' },
+	{ key: 'eq', label: 'EQ integrada' },
+	{ key: 'multilevel', label: 'EQ multinivel' },
+	{ key: 'aiAssistant', label: 'Asistente de IA para audio' },
+	{ key: 'temporalSegments', label: 'EQ por segmentos temporales' },
+	{ key: 'customUi', label: 'UI/UX personalizada' },
+	{ key: 'crossPlatform', label: 'Multiplataforma' },
+] as const;
+
+const heroHighlights = [
+	{
+		icon: 'levels',
+		title: 'EQ multinivel',
+		body: 'Global, playlist, cancion y segmento.',
+	},
+	{
+		icon: 'wave',
+		title: 'WAV / FLAC',
+		body: 'Audio sin perdida para ajustes reales.',
+	},
+	{
+		icon: 'chat',
+		title: 'IA por lenguaje natural',
+		body: '"Mas bajos en el coro" y listo.',
+	},
+];
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta
+			name="description"
+			content="MusicFlow es una aplicacion multiplataforma de reproduccion musical con ecualizacion multinivel asistida por inteligencia artificial."
+		/>
+		<title>MusicFlow | Tu musica, tus reglas</title>
+	</head>
+	<body class="min-h-screen overflow-x-hidden bg-ink text-mist">
+		<main>
+			<section class="relative isolate min-h-screen overflow-hidden px-5 py-6 sm:px-8 lg:px-12">
+				<div class="frequency-wave absolute inset-0 -z-10 opacity-90"></div>
+				<div class="vinyl-rings absolute -right-32 top-24 -z-10 h-[34rem] w-[34rem] opacity-25"></div>
+				<div class="audio-wave-strip absolute bottom-6 left-0 right-0 -z-10 hidden h-24 opacity-30 lg:block"></div>
+				<div class="absolute left-1/2 top-10 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-pulse/10 blur-3xl"></div>
+
+				<nav class="mx-auto flex max-w-7xl items-center justify-between">
+					<a href="#" class="group flex items-center gap-3 rounded-full focus:outline-none focus:ring-2 focus:ring-pulse focus:ring-offset-4 focus:ring-offset-ink">
+						<span class="flex h-11 w-11 items-end justify-center gap-1 rounded-2xl bg-pulse p-2 shadow-glow" aria-hidden="true">
+							<span class="equalizer-bar h-4 w-1.5 rounded-full bg-ink"></span>
+							<span class="equalizer-bar h-7 w-1.5 rounded-full bg-ink"></span>
+							<span class="equalizer-bar h-5 w-1.5 rounded-full bg-ink"></span>
+							<span class="equalizer-bar h-8 w-1.5 rounded-full bg-ink"></span>
+						</span>
+						<span class="font-display text-2xl text-white">MusicFlow</span>
+					</a>
+					<div class="hidden items-center gap-3 sm:flex">
+						<a
+							href="#"
+							class="rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan hover:text-cyan focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-offset-4 focus:ring-offset-ink"
+						>
+							Login
+						</a>
+						<a
+							href="#descargas"
+							class="rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-pulse hover:text-pulse focus:outline-none focus:ring-2 focus:ring-pulse focus:ring-offset-4 focus:ring-offset-ink"
+						>
+							Descargar
+						</a>
+					</div>
+				</nav>
+
+				<div class="mx-auto grid max-w-7xl items-center gap-14 pb-16 pt-24 sm:pt-28 lg:min-h-[calc(100vh-92px)] lg:grid-cols-[0.92fr_1.08fr] lg:gap-16 lg:pt-12 xl:pt-16">
+					<div class="max-w-2xl">
+						<p class="mb-8 inline-flex rounded-full border border-cyan/25 bg-white/5 px-4 py-2 text-sm font-semibold text-cyan shadow-[0_0_30px_rgba(102,229,255,0.08)]">
+							Ecualizacion multinivel asistida por IA
+						</p>
+						<h1 class="font-display text-5xl leading-[0.98] text-white sm:text-6xl lg:text-7xl xl:text-8xl">
+							Tu musica,<br />
+							<span class="text-pulse">tus reglas.</span>
+						</h1>
+						<p class="mt-8 max-w-xl text-lg leading-8 text-slate-300">
+							MusicFlow es una aplicacion multiplataforma de reproduccion musical que permite personalizar el audio por cancion, playlist o segmento temporal con ayuda de un agente de inteligencia artificial.
+						</p>
+						<div class="mt-12 grid max-w-xl gap-3">
+							{heroHighlights.map((item) => (
+								<div class="group rounded-full border border-white/10 bg-white/[0.04] px-4 py-3 transition hover:border-pulse/40 hover:bg-pulse/[0.06]">
+									<div class="flex items-center gap-3">
+										<span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-pulse/15 text-pulse">
+											{
+												item.icon === 'levels' ? (
+													<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+														<path d="M5 4v16M12 4v16M19 4v16M3 9h4M10 15h4M17 7h4" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"></path>
+													</svg>
+												) : item.icon === 'wave' ? (
+													<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+														<path d="M3 12h2.5l2-5 3.5 10 3-8 2 3H21" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg>
+												) : (
+													<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+														<path d="M5 6.5A3.5 3.5 0 0 1 8.5 3h7A3.5 3.5 0 0 1 19 6.5v4A3.5 3.5 0 0 1 15.5 14H12l-4 4v-4A3.5 3.5 0 0 1 5 10.5v-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+														<path d="M9 8h6M9 11h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+													</svg>
+												)
+											}
+										</span>
+										<div>
+											<strong class="block text-sm font-bold text-white">{item.title}</strong>
+											<span class="mt-0.5 block text-xs leading-5 text-slate-400">{item.body}</span>
+										</div>
+									</div>
+								</div>
+							))}
+						</div>
+						<div class="mt-10 flex flex-col gap-3 sm:flex-row">
+							<a
+								href="#descargas"
+								class="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-pulse px-6 py-3 font-bold text-ink shadow-glow transition hover:-translate-y-0.5 hover:bg-cyan focus:outline-none focus:ring-2 focus:ring-pulse focus:ring-offset-4 focus:ring-offset-ink"
+							>
+								<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+									<path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+								Descargar app
+							</a>
+							<a
+								href="#comparativa"
+								class="inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-white/15 px-6 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:border-cyan hover:text-cyan focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-offset-4 focus:ring-offset-ink"
+							>
+								Ver comparativa
+							</a>
+						</div>
+					</div>
+
+					<div class="device-stage relative mx-auto w-full max-w-4xl">
+						<div class="absolute inset-x-8 bottom-4 h-40 rounded-full bg-pulse/20 blur-3xl"></div>
+						<img
+							src="/assets/Portada-Multi-Codex.png"
+							alt="Portada de MusicFlow mostrando la experiencia multiplataforma"
+							class="relative mx-auto w-full scale-105 object-contain drop-shadow-[0_30px_80px_rgba(0,0,0,0.5)] sm:scale-110 lg:scale-125"
+						/>
+					</div>
+				</div>
+			</section>
+
+			<section class="px-5 py-20 sm:px-8 lg:px-12">
+				<div class="mx-auto max-w-7xl">
+					<div class="mb-10 max-w-3xl">
+						<p class="text-sm font-bold uppercase text-pulse">Empresa</p>
+						<h2 class="mt-3 font-display text-4xl text-white sm:text-5xl">Toca una tarjeta y descubre el proposito</h2>
+						<p class="mt-5 leading-7 text-slate-300">
+							Una capa de interaccion simple convierte Mision, Vision y Valores en una lectura mas activa: primero aparece la idea, luego el detalle.
+						</p>
+					</div>
+					<div class="grid gap-6 lg:grid-cols-3">
+						{purposeCards.map((card) => (
+							<label class="flip-card block min-h-[23rem] cursor-pointer focus-within:outline-none">
+								<input type="checkbox" class="peer sr-only" aria-label={`Ver contenido de ${card.label}`} />
+								<div class="flip-card-inner relative h-full min-h-[23rem] rounded-lg">
+									<div class="flip-card-face absolute inset-0 flex flex-col justify-between overflow-hidden rounded-lg border border-white/10 bg-white/[0.04] p-7">
+										<div class="vinyl-rings pointer-events-none absolute -right-28 -top-28 h-64 w-64 opacity-20"></div>
+										<div>
+											<span class={`text-sm font-bold uppercase ${card.accent}`}>{card.label}</span>
+											<span class="mt-16 block text-center font-display text-5xl leading-tight text-white">{card.display}</span>
+										</div>
+										<div class="inline-flex items-center gap-2 text-sm font-semibold text-slate-300">
+											<span class="grid h-9 w-9 place-items-center rounded-full bg-pulse/15 text-pulse">
+												<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+													<path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+											Click para leer
+										</div>
+									</div>
+									<div class="flip-card-face flip-card-back absolute inset-0 flex flex-col justify-between overflow-hidden rounded-lg border border-pulse/25 bg-deck p-7 shadow-glow">
+										<div class="audio-wave-strip pointer-events-none absolute bottom-4 left-0 right-0 h-20 opacity-20"></div>
+										<div>
+											<span class={`text-sm font-bold uppercase ${card.accent}`}>{card.backLabel}</span>
+											<span class="mt-5 block text-2xl font-bold leading-tight text-white">{card.title}</span>
+											<span class="mt-5 block leading-7 text-slate-300">{card.body}</span>
+										</div>
+										<span class="text-sm font-semibold text-pulse">Volver</span>
+									</div>
+								</div>
+							</label>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="bg-night px-5 py-20 sm:px-8 lg:px-12">
+				<div class="mx-auto max-w-7xl">
+					<div class="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+						<div>
+							<p class="text-sm font-bold uppercase text-coral">Problema</p>
+							<h2 class="mt-3 font-display text-4xl text-white sm:text-5xl">Escuchar musica no deberia exigir saber ingenieria de audio</h2>
+							<p class="mt-5 leading-7 text-slate-300">
+								MusicFlow responde a tres fricciones claras: poco control real, ajustes tecnicos dificiles y ausencia de IA para traducir lo que quieres escuchar.
+							</p>
+						</div>
+						<div class="grid gap-4 md:grid-cols-3">
+							{problems.map((problem) => (
+								<article tabindex="0" class="problem-card group relative flex min-h-64 flex-col items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-ink/70 p-6 text-center transition duration-300 hover:-translate-y-1 hover:border-coral/40 hover:bg-white/[0.04] focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-4 focus:ring-offset-night">
+									<div class="flex flex-col items-center transition duration-300 group-hover:-translate-y-8 group-hover:opacity-0 group-focus:-translate-y-8 group-focus:opacity-0">
+										<div class="mb-5 grid h-14 w-14 place-items-center rounded-lg bg-coral/10 text-coral transition group-hover:scale-110 group-focus:scale-110">
+											{
+												problem.icon === 'eq' ? (
+													<svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+														<path d="M6 5v14M12 5v14M18 5v14M4 9h4M10 15h4M16 11h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+													</svg>
+												) : problem.icon === 'knob' ? (
+													<svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+														<path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="2"></path>
+														<path d="M12 3v3M12 18v3M4.2 7.5l2.6 1.5M17.2 15l2.6 1.5M4.2 16.5 6.8 15M17.2 9l2.6-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+													</svg>
+												) : (
+													<svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+														<path d="M12 3l1.4 4.2L18 9l-4.6 1.8L12 15l-1.4-4.2L6 9l4.6-1.8L12 3Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path>
+														<path d="M5 16h14M8 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+													</svg>
+												)
+											}
+										</div>
+										<h3 class="max-w-48 text-xl font-bold leading-tight text-white">{problem.title}</h3>
+										<span class="mt-5 text-xs font-bold uppercase tracking-wide text-coral/80">Ver detalle</span>
+									</div>
+									<div class="absolute inset-0 flex translate-y-6 flex-col items-center justify-center px-7 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100">
+										<h3 class="text-lg font-bold text-white">{problem.title}</h3>
+										<p class="mt-4 text-sm leading-6 text-slate-300">{problem.body}</p>
+									</div>
+								</article>
+							))}
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="px-5 py-20 sm:px-8 lg:px-12">
+				<div class="mx-auto max-w-7xl">
+					<div class="max-w-3xl">
+						<p class="text-sm font-bold uppercase text-pulse">Solucion</p>
+						<h2 class="mt-3 font-display text-4xl text-white sm:text-5xl">Un flujo inteligente para ajustar cada detalle</h2>
+						<p class="mt-5 leading-7 text-slate-300">
+							La propuesta combina reproduccion musical, biblioteca, ecualizacion avanzada y configuracion por chat de IA para que el usuario pida el sonido que quiere en palabras simples.
+						</p>
+					</div>
+					<div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+						{solutionFeatures.map((feature) => (
+							<article class="rounded-lg border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-pulse/35 hover:bg-white/[0.06]">
+								<div class="mb-6 grid h-12 w-12 place-items-center rounded-lg bg-pulse/15 text-pulse">
+									{
+										feature.icon === 'sliders' ? (
+											<svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M5 4v16M12 4v16M19 4v16M3 8h4M10 14h4M17 10h4" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"></path>
+											</svg>
+										) : feature.icon === 'timeline' ? (
+											<svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M4 18V6M20 18V6M7 12h10M8 8h3v8H8V8Zm5 3h3v5h-3v-5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										) : feature.icon === 'spark' ? (
+											<svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 3l1.4 4.2L18 9l-4.6 1.8L12 15l-1.4-4.2L6 9l4.6-1.8L12 3Zm6 10 .8 2.2L21 16l-2.2.8L18 19l-.8-2.2L15 16l2.2-.8L18 13ZM6 14l.9 2.6L9.5 18l-2.6.9L6 21l-.9-2.1L2.5 18l2.6-1.4L6 14Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+											</svg>
+										) : (
+											<svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M7 7h10l-2.5-2.5M17 17H7l2.5 2.5M5 12a7 7 0 0 1 11.4-5.4M19 12a7 7 0 0 1-11.4 5.4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										)
+									}
+								</div>
+								<h3 class="text-lg font-bold text-white">{feature.title}</h3>
+								<p class="mt-3 text-sm leading-6 text-slate-300">{feature.body}</p>
+							</article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section id="comparativa" class="bg-night px-5 py-20 sm:px-8 lg:px-12">
+				<div class="mx-auto max-w-7xl">
+					<div class="max-w-3xl">
+						<p class="text-sm font-bold uppercase text-pulse">Comparativa</p>
+						<h2 class="mt-3 font-display text-4xl text-white sm:text-5xl">Lo que MusicFlow pone en tus manos</h2>
+						<p class="mt-5 leading-7 text-slate-300">
+							Las grandes plataformas resuelven el acceso a canciones. MusicFlow se diferencia al permitir ecualizacion granular, instrucciones por lenguaje natural y perfiles que cambian segun la cancion o el segmento.
+						</p>
+					</div>
+
+					<div class="mt-10 grid gap-4 md:hidden">
+						{competitors.map((app) => (
+							<article class={`rounded-lg border p-5 ${app.highlight ? 'border-pulse/40 bg-pulse/[0.07]' : 'border-white/10 bg-ink/70'}`}>
+								<h3 class={`text-lg font-bold ${app.highlight ? 'text-pulse' : 'text-white'}`}>{app.name}</h3>
+								<div class="mt-4 space-y-3">
+									{featureRows.map((row) => (
+										<div class="flex items-center justify-between gap-4 border-t border-white/10 pt-3">
+											<span class="text-sm text-slate-300">{row.label}</span>
+											<span class="sr-only">{app.features[row.key] ? 'Si incluido' : 'No incluido'}</span>
+											{
+												app.features[row.key] ? (
+													<svg class="h-5 w-5 shrink-0 text-pulse" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+														<path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg>
+												) : (
+													<svg class="h-5 w-5 shrink-0 text-coral" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+														<path d="m18 6-12 12M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"></path>
+													</svg>
+												)
+											}
+										</div>
+									))}
+								</div>
+							</article>
+						))}
+					</div>
+
+					<div class="mt-10 hidden min-w-0 max-w-full overflow-hidden rounded-lg border border-white/10 bg-ink/70 md:block">
+						<div class="max-w-full overflow-x-auto">
+							<table class="w-full min-w-[720px] border-collapse text-left">
+								<thead>
+									<tr class="border-b border-white/10 bg-white/[0.04]">
+										<th scope="col" class="px-5 py-4 text-sm font-semibold text-slate-300">Aspecto</th>
+										{competitors.map((app) => (
+											<th scope="col" class={`px-5 py-4 text-center text-sm font-bold ${app.highlight ? 'text-pulse' : 'text-white'}`}>
+												{app.name}
+											</th>
+										))}
+									</tr>
+								</thead>
+								<tbody>
+									{featureRows.map((row) => (
+										<tr class="border-b border-white/10 last:border-0">
+											<th scope="row" class="px-5 py-5 font-medium text-white">{row.label}</th>
+											{competitors.map((app) => (
+												<td class={`px-5 py-5 text-center ${app.highlight ? 'bg-pulse/5' : ''}`}>
+													<span class="sr-only">{app.features[row.key] ? 'Si incluido' : 'No incluido'}</span>
+													{
+														app.features[row.key] ? (
+															<svg class="mx-auto h-5 w-5 text-pulse" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+																<path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+															</svg>
+														) : (
+															<svg class="mx-auto h-5 w-5 text-coral" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+																<path d="m18 6-12 12M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"></path>
+															</svg>
+														)
+													}
+												</td>
+											))}
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="px-5 py-20 sm:px-8 lg:px-12">
+				<div class="mx-auto max-w-7xl">
+					<div class="grid items-end gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+						<div>
+							<p class="text-sm font-bold uppercase text-cyan">Dispositivos</p>
+							<h2 class="mt-3 font-display text-4xl text-white sm:text-5xl">Tu musica en todos lados</h2>
+							<p class="mt-5 leading-7 text-slate-300">
+								Lleva tu biblioteca, playlists, perfiles de ecualizacion y preferencias entre web, escritorio y movil con una experiencia consistente.
+							</p>
+						</div>
+						<div class="relative">
+							<div class="vinyl-rings absolute -right-14 -top-16 -z-10 h-72 w-72 opacity-20"></div>
+							<img
+								src="/assets/Portada-Multi-Codex.png"
+								alt="Portada multiplataforma de MusicFlow en laptop, tablet y celular"
+								class="mx-auto w-full max-w-3xl object-contain drop-shadow-[0_28px_70px_rgba(0,0,0,0.45)]"
+								loading="lazy"
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="bg-night px-5 py-20 sm:px-8 lg:px-12">
+				<div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+					<div>
+						<p class="text-sm font-bold uppercase text-pulse">Demo mobile</p>
+						<h2 class="mt-3 font-display text-4xl text-white sm:text-5xl">Mira MusicFlow en accion</h2>
+						<p class="mt-5 max-w-2xl leading-7 text-slate-300">
+							La demo muestra como se ve la experiencia movil: reproduccion, navegacion y la interfaz pensada para llevar tus perfiles de audio a cualquier lugar.
+						</p>
+					</div>
+					<div class="mx-auto w-full max-w-sm">
+						<div class="relative rounded-[2rem] border border-white/10 bg-deck p-3 shadow-device">
+							<div class="absolute left-1/2 top-5 z-10 h-6 w-24 -translate-x-1/2 rounded-full bg-black/80"></div>
+							<div class="overflow-hidden rounded-[1.5rem] bg-black">
+								<iframe
+									class="aspect-[9/16] w-full"
+									src="https://www.youtube.com/embed/3bojp3Hu6b0?autoplay=1&mute=1&loop=1&playlist=3bojp3Hu6b0&playsinline=1&controls=1&rel=0"
+									title="Demo mobile de MusicFlow"
+									loading="lazy"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen
+								></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="descargas" class="px-5 py-24 sm:px-8 sm:py-28 lg:flex lg:min-h-[55vh] lg:items-center lg:px-12">
+				<div class="mx-auto w-full max-w-7xl rounded-lg border border-pulse/25 bg-pulse/[0.07] p-8 sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
+					<div>
+						<p class="text-sm font-bold uppercase text-pulse">Descargas</p>
+						<h2 class="mt-3 font-display text-4xl text-white">Empieza tu propio flujo</h2>
+						<p class="mt-4 max-w-2xl leading-7 text-slate-300">
+							Instala MusicFlow en escritorio o movil y conserva una experiencia consistente para escuchar, ajustar y sincronizar tu musica.
+						</p>
+					</div>
+					<div class="mt-8 grid gap-3 sm:grid-cols-2 lg:mt-0">
+						<a
+							href="#"
+							class="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-white px-6 py-3 font-bold text-ink transition hover:-translate-y-0.5 hover:bg-cyan focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-offset-4 focus:ring-offset-night"
+						>
+							<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+								<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v9A2.5 2.5 0 0 1 17.5 17h-11A2.5 2.5 0 0 1 4 14.5v-9ZM9 21h6m-3-4v4" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+							Desktop
+						</a>
+						<a
+							href="#"
+							class="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-pulse px-6 py-3 font-bold text-ink shadow-glow transition hover:-translate-y-0.5 hover:bg-cyan focus:outline-none focus:ring-2 focus:ring-pulse focus:ring-offset-4 focus:ring-offset-night"
+						>
+							<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+								<path d="M9 2.75h6A2.25 2.25 0 0 1 17.25 5v14A2.25 2.25 0 0 1 15 21.25H9A2.25 2.25 0 0 1 6.75 19V5A2.25 2.25 0 0 1 9 2.75Zm2 15.5h2" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" />
+							</svg>
+							Mobile
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="border-t border-white/10 px-5 py-10 sm:px-8 lg:px-12">
+			<div class="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
+				<div>
+					<a href="#" class="inline-flex items-center gap-3 rounded-full focus:outline-none focus:ring-2 focus:ring-pulse focus:ring-offset-4 focus:ring-offset-ink">
+						<span class="flex h-10 w-10 items-end justify-center gap-1 rounded-2xl bg-pulse p-2" aria-hidden="true">
+							<span class="h-4 w-1.5 rounded-full bg-ink"></span>
+							<span class="h-7 w-1.5 rounded-full bg-ink"></span>
+							<span class="h-5 w-1.5 rounded-full bg-ink"></span>
+						</span>
+						<span class="font-display text-xl text-white">MusicFlow</span>
+					</a>
+					<p class="mt-4 max-w-xl text-sm leading-6 text-slate-400">
+						Proyecto StartUp Tecsup 2026-1. Aplicacion multiplataforma de reproduccion musical con ecualizacion personalizada multinivel asistida por inteligencia artificial.
+					</p>
+				</div>
+				<div class="flex flex-wrap gap-3 text-sm font-semibold text-slate-300">
+					<a href="#comparativa" class="rounded-full border border-white/10 px-4 py-2 transition hover:border-pulse hover:text-pulse focus:outline-none focus:ring-2 focus:ring-pulse focus:ring-offset-4 focus:ring-offset-ink">Comparativa</a>
+					<a href="#descargas" class="rounded-full border border-white/10 px-4 py-2 transition hover:border-pulse hover:text-pulse focus:outline-none focus:ring-2 focus:ring-pulse focus:ring-offset-4 focus:ring-offset-ink">Descargas</a>
+				</div>
+			</div>
+			<div class="mx-auto mt-8 flex max-w-7xl flex-col gap-2 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+				<p>MusicFlow. Tu musica, tus reglas.</p>
+				<p>Fernando Mas Pinto y Aldy Jenxy Cuadros.</p>
+			</div>
+		</footer>
+	</body>
+</html>

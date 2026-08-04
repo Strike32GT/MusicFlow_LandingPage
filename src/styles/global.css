@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Righteous&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink font-sans text-mist antialiased;
+  }
+
+  ::selection {
+    @apply bg-pulse text-ink;
+  }
+}
+
+@layer components {
+  .frequency-wave {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(49, 242, 138, 0.22), transparent 28%),
+      radial-gradient(circle at 82% 16%, rgba(102, 229, 255, 0.18), transparent 24%),
+      linear-gradient(135deg, rgba(255, 107, 107, 0.14), transparent 42%);
+  }
+
+  .vinyl-rings {
+    border-radius: 9999px;
+    background:
+      repeating-radial-gradient(circle, rgba(102, 229, 255, 0.18) 0 1px, transparent 1px 18px),
+      radial-gradient(circle, rgba(49, 242, 138, 0.12), transparent 62%);
+  }
+
+  .audio-wave-strip {
+    background-image:
+      linear-gradient(90deg, transparent 0 2%, rgba(102, 229, 255, 0.28) 2% 2.4%, transparent 2.4% 5%),
+      linear-gradient(90deg, transparent 0 7%, rgba(49, 242, 138, 0.34) 7% 7.5%, transparent 7.5% 11%),
+      linear-gradient(90deg, transparent 0 14%, rgba(183, 167, 255, 0.28) 14% 14.4%, transparent 14.4% 18%);
+    background-size: 180px 100%;
+    mask-image: linear-gradient(to top, transparent, black 32%, black 68%, transparent);
+  }
+
+  .device-stage::before {
+    content: '';
+    position: absolute;
+    inset: -18px 18px auto 18px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(102, 229, 255, 0.65), rgba(49, 242, 138, 0.65), transparent);
+  }
+
+  .device-stage::after {
+    content: '';
+    position: absolute;
+    left: 16%;
+    right: 16%;
+    bottom: -28px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(49, 242, 138, 0.5), transparent);
+  }
+
+  .flip-card {
+    perspective: 1200px;
+  }
+
+  .flip-card-inner {
+    transform-style: preserve-3d;
+    transition: transform 620ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .flip-card:hover .flip-card-inner,
+  .flip-card:focus-within .flip-card-inner {
+    transform: rotateX(3deg) rotateY(-5deg) translateY(-4px);
+  }
+
+  .flip-card:has(input:checked) .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-face {
+    backface-visibility: hidden;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+
+  .problem-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .problem-card::after {
+    content: '';
+    position: absolute;
+    inset: auto 16px 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 107, 0.55), transparent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 300ms ease;
+  }
+
+  .problem-card:hover::after,
+  .problem-card:focus::after {
+    transform: scaleX(1);
+  }
+
+  .equalizer-bar {
+    transform-origin: bottom;
+    animation: rise 1.8s ease-in-out infinite;
+  }
+
+  .equalizer-bar:nth-child(2) {
+    animation-delay: 0.18s;
+  }
+
+  .equalizer-bar:nth-child(3) {
+    animation-delay: 0.34s;
+  }
+
+  .equalizer-bar:nth-child(4) {
+    animation-delay: 0.08s;
+  }
+}
+
+@keyframes rise {
+  0%,
+  100% {
+    transform: scaleY(0.45);
+  }
+
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .flip-card:hover .flip-card-inner,
+  .flip-card:focus-within .flip-card-inner,
+  .flip-card:has(input:checked) .flip-card-inner {
+    transform: none;
+  }
+
+  .flip-card:has(input:checked) .flip-card-face:first-of-type {
+    display: none;
+  }
+
+  .flip-card:has(input:checked) .flip-card-back {
+    transform: none;
+  }
+}
