@@ -25,23 +25,23 @@
 @layer components {
   .frequency-wave {
     background:
-      radial-gradient(circle at 20% 20%, rgba(49, 242, 138, 0.22), transparent 28%),
+      radial-gradient(circle at 20% 20%, rgba(47, 140, 255, 0.24), transparent 28%),
       radial-gradient(circle at 82% 16%, rgba(102, 229, 255, 0.18), transparent 24%),
-      linear-gradient(135deg, rgba(255, 107, 107, 0.14), transparent 42%);
+      linear-gradient(135deg, rgba(159, 220, 255, 0.14), transparent 42%);
   }
 
   .vinyl-rings {
     border-radius: 9999px;
     background:
       repeating-radial-gradient(circle, rgba(102, 229, 255, 0.18) 0 1px, transparent 1px 18px),
-      radial-gradient(circle, rgba(49, 242, 138, 0.12), transparent 62%);
+      radial-gradient(circle, rgba(47, 140, 255, 0.16), transparent 62%);
   }
 
   .audio-wave-strip {
     background-image:
       linear-gradient(90deg, transparent 0 2%, rgba(102, 229, 255, 0.28) 2% 2.4%, transparent 2.4% 5%),
-      linear-gradient(90deg, transparent 0 7%, rgba(49, 242, 138, 0.34) 7% 7.5%, transparent 7.5% 11%),
-      linear-gradient(90deg, transparent 0 14%, rgba(183, 167, 255, 0.28) 14% 14.4%, transparent 14.4% 18%);
+      linear-gradient(90deg, transparent 0 7%, rgba(47, 140, 255, 0.38) 7% 7.5%, transparent 7.5% 11%),
+      linear-gradient(90deg, transparent 0 14%, rgba(159, 220, 255, 0.28) 14% 14.4%, transparent 14.4% 18%);
     background-size: 180px 100%;
     mask-image: linear-gradient(to top, transparent, black 32%, black 68%, transparent);
   }
@@ -51,7 +51,7 @@
     position: absolute;
     inset: -18px 18px auto 18px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(102, 229, 255, 0.65), rgba(49, 242, 138, 0.65), transparent);
+    background: linear-gradient(90deg, transparent, rgba(102, 229, 255, 0.65), rgba(47, 140, 255, 0.65), transparent);
   }
 
   .device-stage::after {
@@ -61,7 +61,7 @@
     right: 16%;
     bottom: -28px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(49, 242, 138, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, rgba(47, 140, 255, 0.55), transparent);
   }
 
   .flip-card {
