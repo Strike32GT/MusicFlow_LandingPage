@@ -182,18 +182,32 @@ const heroHighlights = [
 	<body class="min-h-screen overflow-x-hidden bg-ink text-mist">
 		<main>
 			<section class="relative isolate min-h-screen overflow-hidden px-5 py-6 sm:px-8 lg:px-12">
-				<div class="frequency-wave absolute inset-0 -z-10 opacity-90"></div>
-				<div class="vinyl-rings absolute -right-32 top-24 -z-10 h-[34rem] w-[34rem] opacity-25"></div>
-				<div class="audio-wave-strip absolute bottom-6 left-0 right-0 -z-10 hidden h-24 opacity-30 lg:block"></div>
-				<div class="absolute left-1/2 top-10 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-pulse/10 blur-3xl"></div>
+				<div class="frequency-wave absolute inset-0 z-0 opacity-90"></div>
+				<div class="vinyl-rings absolute -right-32 top-24 z-0 h-[34rem] w-[34rem] opacity-25"></div>
+				<div class="audio-wave-strip absolute bottom-6 left-0 right-0 z-0 hidden h-24 opacity-30 lg:block"></div>
+				<div class="absolute left-1/2 top-10 z-0 h-72 w-72 -translate-x-1/2 rounded-full bg-pulse/10 blur-3xl"></div>
 
-				<nav class="mx-auto flex max-w-7xl items-center justify-between">
+				<nav class="relative z-10 mx-auto flex max-w-7xl items-center justify-between">
 					<a href="#" class="group flex items-center gap-3 rounded-full focus:outline-none focus:ring-2 focus:ring-pulse focus:ring-offset-4 focus:ring-offset-ink">
-						<span class="flex h-11 w-11 items-end justify-center gap-1 rounded-2xl bg-pulse p-2 shadow-glow" aria-hidden="true">
-							<span class="equalizer-bar h-4 w-1.5 rounded-full bg-ink"></span>
-							<span class="equalizer-bar h-7 w-1.5 rounded-full bg-ink"></span>
-							<span class="equalizer-bar h-5 w-1.5 rounded-full bg-ink"></span>
-							<span class="equalizer-bar h-8 w-1.5 rounded-full bg-ink"></span>
+						<span class="grid h-11 w-11 place-items-center rounded-2xl bg-pulse shadow-glow" aria-hidden="true">
+							<svg class="h-7 w-7 text-ink" viewBox="0 0 32 32" fill="currentColor" role="img">
+								<rect x="4" y="18" width="3.5" height="10" rx="1.75">
+									<animate attributeName="height" values="10;18;8;15;10" dur="1.15s" repeatCount="indefinite" />
+									<animate attributeName="y" values="18;10;20;13;18" dur="1.15s" repeatCount="indefinite" />
+								</rect>
+								<rect x="12" y="10" width="3.5" height="18" rx="1.75">
+									<animate attributeName="height" values="18;7;23;12;18" dur="0.95s" repeatCount="indefinite" />
+									<animate attributeName="y" values="10;21;5;16;10" dur="0.95s" repeatCount="indefinite" />
+								</rect>
+								<rect x="20" y="14" width="3.5" height="14" rx="1.75">
+									<animate attributeName="height" values="14;24;9;18;14" dur="1.08s" repeatCount="indefinite" />
+									<animate attributeName="y" values="14;4;19;10;14" dur="1.08s" repeatCount="indefinite" />
+								</rect>
+								<rect x="27" y="7" width="3.5" height="21" rx="1.75">
+									<animate attributeName="height" values="21;11;25;8;21" dur="1s" repeatCount="indefinite" />
+									<animate attributeName="y" values="7;17;3;20;7" dur="1s" repeatCount="indefinite" />
+								</rect>
+							</svg>
 						</span>
 						<span class="font-display text-2xl text-white">MusicFlow</span>
 					</a>
@@ -213,7 +227,7 @@ const heroHighlights = [
 					</div>
 				</nav>
 
-				<div class="mx-auto grid max-w-7xl items-center gap-14 pb-16 pt-24 sm:pt-28 lg:min-h-[calc(100vh-92px)] lg:grid-cols-[0.92fr_1.08fr] lg:gap-16 lg:pt-12 xl:pt-16">
+				<div class="relative z-10 mx-auto grid max-w-7xl items-center gap-14 pb-16 pt-24 sm:pt-28 lg:min-h-[calc(100vh-92px)] lg:grid-cols-[0.92fr_1.08fr] lg:gap-16 lg:pt-12 xl:pt-16">
 					<div class="max-w-2xl">
 						<p class="mb-8 inline-flex rounded-full border border-cyan/25 bg-white/5 px-4 py-2 text-sm font-semibold text-cyan shadow-[0_0_30px_rgba(102,229,255,0.08)]">
 							Ecualizacion multinivel asistida por IA
@@ -583,10 +597,25 @@ const heroHighlights = [
 			<div class="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
 				<div>
 					<a href="#" class="inline-flex items-center gap-3 rounded-full focus:outline-none focus:ring-2 focus:ring-pulse focus:ring-offset-4 focus:ring-offset-ink">
-						<span class="flex h-10 w-10 items-end justify-center gap-1 rounded-2xl bg-pulse p-2" aria-hidden="true">
-							<span class="h-4 w-1.5 rounded-full bg-ink"></span>
-							<span class="h-7 w-1.5 rounded-full bg-ink"></span>
-							<span class="h-5 w-1.5 rounded-full bg-ink"></span>
+						<span class="grid h-10 w-10 place-items-center rounded-2xl bg-pulse" aria-hidden="true">
+							<svg class="h-6 w-6 text-ink" viewBox="0 0 32 32" fill="currentColor" role="img">
+								<rect x="4" y="18" width="3.5" height="10" rx="1.75">
+									<animate attributeName="height" values="10;18;8;15;10" dur="1.15s" repeatCount="indefinite" />
+									<animate attributeName="y" values="18;10;20;13;18" dur="1.15s" repeatCount="indefinite" />
+								</rect>
+								<rect x="12" y="10" width="3.5" height="18" rx="1.75">
+									<animate attributeName="height" values="18;7;23;12;18" dur="0.95s" repeatCount="indefinite" />
+									<animate attributeName="y" values="10;21;5;16;10" dur="0.95s" repeatCount="indefinite" />
+								</rect>
+								<rect x="20" y="14" width="3.5" height="14" rx="1.75">
+									<animate attributeName="height" values="14;24;9;18;14" dur="1.08s" repeatCount="indefinite" />
+									<animate attributeName="y" values="14;4;19;10;14" dur="1.08s" repeatCount="indefinite" />
+								</rect>
+								<rect x="27" y="7" width="3.5" height="21" rx="1.75">
+									<animate attributeName="height" values="21;11;25;8;21" dur="1s" repeatCount="indefinite" />
+									<animate attributeName="y" values="7;17;3;20;7" dur="1s" repeatCount="indefinite" />
+								</rect>
+							</svg>
 						</span>
 						<span class="font-display text-xl text-white">MusicFlow</span>
 					</a>
