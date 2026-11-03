@@ -19,6 +19,18 @@
       "skillPath": "skills/frameworks/clerk-astro-patterns/SKILL.md",
       "computedHash": "efffd214dd3e4f5aaa41b000b2d62b784edc2c3d5d4aa1f9f4c54ea7cde92a29"
     },
+    "detecting-typosquatting-packages": {
+      "source": "mukul975/Anthropic-Cybersecurity-Skills",
+      "sourceType": "github",
+      "skillPath": "skills/detecting-typosquatting-packages/SKILL.md",
+      "computedHash": "4f0d44a8afc5a0b1769249cfa640ec1239f16d1ef6384ef91c4ab30557e55c2f"
+    },
+    "detecting-typosquatting-packages-in-npm-pypi": {
+      "source": "mukul975/Anthropic-Cybersecurity-Skills",
+      "sourceType": "github",
+      "skillPath": "skills/detecting-typosquatting-packages-in-npm-pypi/SKILL.md",
+      "computedHash": "a124ac2ac2882d0b759e148947269d6128a5ce22b7a8393e3765f11243e612aa"
+    },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
@@ -30,6 +42,54 @@
       "sourceType": "github",
       "skillPath": "skills/frontend-design/SKILL.md",
       "computedHash": "93f53fd1c0352d3d7ec17b8f73d7351bf76f4821e55d123c9d2abc2c53ba48e4"
+    },
+    "implementing-secret-scanning-with-gitleaks": {
+      "source": "mukul975/Anthropic-Cybersecurity-Skills",
+      "sourceType": "github",
+      "skillPath": "skills/implementing-secret-scanning-with-gitleaks/SKILL.md",
+      "computedHash": "eab9e85ee5b5732bf73444ca9f06ce6fc02dc05c5a0d772181603f8cf3f70939"
+    },
+    "integrating-sast-into-github-actions-pipeline": {
+      "source": "mukul975/Anthropic-Cybersecurity-Skills",
+      "sourceType": "github",
+      "skillPath": "skills/integrating-sast-into-github-actions-pipeline/SKILL.md",
+      "computedHash": "ccd1974b8f602014763911d6016b5b136adca95e71154efb5c3f6da6930e7d7f"
+    },
+    "performing-sca-dependency-scanning-with-snyk": {
+      "source": "mukul975/Anthropic-Cybersecurity-Skills",
+      "sourceType": "github",
+      "skillPath": "skills/performing-sca-dependency-scanning-with-snyk/SKILL.md",
+      "computedHash": "5688cf7c6143c21e483dd06bd45f869dbd28fcc0013b89767bcb73872490dad3"
+    },
+    "performing-security-headers-audit": {
+      "source": "mukul975/Anthropic-Cybersecurity-Skills",
+      "sourceType": "github",
+      "skillPath": "skills/performing-security-headers-audit/SKILL.md",
+      "computedHash": "d3cfac17964fd398dc54468f1bfe92ea74433fb53c07601875ae3fc156f4e172"
+    },
+    "securing-github-actions-workflows": {
+      "source": "mukul975/Anthropic-Cybersecurity-Skills",
+      "sourceType": "github",
+      "skillPath": "skills/securing-github-actions-workflows/SKILL.md",
+      "computedHash": "59dfa6cbbb5abd8dcfb16fdebc539993579b04c18518dba08e6b0a3caffaf33d"
+    },
+    "testing-for-email-header-injection": {
+      "source": "mukul975/Anthropic-Cybersecurity-Skills",
+      "sourceType": "github",
+      "skillPath": "skills/testing-for-email-header-injection/SKILL.md",
+      "computedHash": "77105e6b9bb66534f33f27e03d4808f316cf0e467049bb9a9401a06eaa01b90d"
+    },
+    "testing-for-xss-vulnerabilities": {
+      "source": "mukul975/Anthropic-Cybersecurity-Skills",
+      "sourceType": "github",
+      "skillPath": "skills/testing-for-xss-vulnerabilities/SKILL.md",
+      "computedHash": "2b8b0f52bb96238ee30dd8dd803d8b6473dd4b8843ac4474194a89c913e0c7af"
+    },
+    "testing-for-xss-vulnerabilities-with-burpsuite": {
+      "source": "mukul975/Anthropic-Cybersecurity-Skills",
+      "sourceType": "github",
+      "skillPath": "skills/testing-for-xss-vulnerabilities-with-burpsuite/SKILL.md",
+      "computedHash": "135d718c6d6871cfcd2f2dbe0b9360c37892bf23e0612794e27e03614240e0c2"
     },
     "ui-ux-pro-max": {
       "source": "nextlevelbuilder/ui-ux-pro-max-skill",
