@@ -88,6 +88,17 @@ const mobileNav = [
   { label: 'Comparativa', href: '#comparativa' },
   { label: 'Comunidad', href: '#comunidad' },
 ];
+
+const downloadOptions = {
+  mobile: [
+    { label: 'Android', detail: 'Archivo APK · enlace de descarga pendiente', icon: 'fa-android', color: '#17d44f' },
+    { label: 'iPhone y iPad', detail: 'App Store · enlace de descarga pendiente', icon: 'fa-apple', color: '#434945' },
+  ],
+  desktop: [
+    { label: 'Windows', detail: 'Instalador .exe · enlace de descarga pendiente', icon: 'fa-windows', color: '#17a5d4' },
+    { label: 'Linux', detail: 'MediaFire / instalador · enlace de descarga pendiente', icon: 'fa-linux', color: '#000000' },
+  ],
+};
 ---
 
 <html lang="es">
@@ -100,6 +111,7 @@ const mobileNav = [
       name="description"
       content="MusicFlow combina audio WAV/FLAC, ecualización avanzada, segmentación temporal y FlowIA en web, móvil y escritorio."
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer" />
     <title>MusicFlow — Deja que la música fluya</title>
   </head>
 
@@ -166,7 +178,7 @@ const mobileNav = [
               EQ integrada, audio WAV/FLAC sin pérdida, ecualización por segmentos y una IA que crea tus playlists con solo pedírselo. Esto es <strong class="text-ink">MusicFlow</strong>.
             </p>
             <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a href="#plataformas" class="focusable inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-pulse px-7 text-sm font-extrabold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-blue-700">
+              <a href="https://musicflowapp.net/" class="focusable inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-pulse px-7 text-sm font-extrabold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-blue-700">
                 Escuchar ahora
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
               </a>
@@ -256,7 +268,11 @@ const mobileNav = [
                 <div class="p-7">
                   <h3 class="text-2xl font-extrabold">{platform.title}</h3>
                   <p class="mt-3 min-h-14 text-sm leading-7 text-slate-600">{platform.body}</p>
-                  <a href="#" class="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-pulse hover:text-blue-700">{platform.action}<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+                  {platform.type === 'web' ? (
+                    <a href="https://musicflowapp.net/" class="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-pulse hover:text-blue-700">Abrir MusicFlow Web<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+                  ) : (
+                    <button type="button" class="focusable mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-pulse hover:text-blue-700" data-download-platform={platform.type}>{platform.action}<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
+                  )}
                 </div>
               </article>
             ))}
@@ -315,13 +331,22 @@ const mobileNav = [
               <p class="mt-7 text-xs font-extrabold uppercase tracking-wider text-slate-400">Instagram</p><h3 class="mt-2 text-xl font-extrabold">@musicflow</h3><p class="mt-3 text-sm text-slate-600">Novedades, lanzamientos y contenido de la comunidad.</p>
             </a>
             <a href="https://discord.gg/M5gZ5Dbfp" target="_blank" rel="noreferrer" class="community-card rounded-3xl border border-line bg-white p-7 shadow-card">
-              <div class="flex items-start justify-between"><span class="grid h-12 w-12 place-items-center rounded-2xl bg-indigo-600 text-white"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 7.5c3.4-1.7 6.6-1.7 10 0 1.5 2.2 2.2 4.5 2 7-2 2.3-4 3.2-6 3.5l-.8-1.1M7 7.5c-1.5 2.2-2.2 4.5-2 7 2 2.3 4 3.2 6 3.5l.8-1.1M9.5 13h.01M14.5 13h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg></span><svg class="h-5 w-5 text-slate-400" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+              <div class="flex items-start justify-between"><span class="grid h-12 w-12 place-items-center rounded-2xl bg-indigo-50"><i class="fa-brands fa-discord text-2xl" style="color: rgb(71, 64, 196);" aria-hidden="true"></i></span><svg class="h-5 w-5 text-slate-400" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
               <p class="mt-7 text-xs font-extrabold uppercase tracking-wider text-slate-400">Discord</p><h3 class="mt-2 text-xl font-extrabold">Comunidad MusicFlow</h3><p class="mt-3 text-sm text-slate-600">Comparte presets y conversa con otros amantes del audio.</p>
             </a>
           </div>
         </div>
       </section>
     </main>
+
+    <dialog id="download-dialog" class="w-[min(92vw,31rem)] rounded-3xl border border-line bg-white p-0 text-ink shadow-device backdrop:bg-slate-950/45" aria-labelledby="download-dialog-title">
+      <div class="p-6 sm:p-8">
+        <div class="flex items-start justify-between gap-5"><div><p class="section-label" id="download-dialog-label">Descargas</p><h2 id="download-dialog-title" class="mt-2 font-display text-3xl font-extrabold">Elige tu versión</h2><p class="mt-3 text-sm leading-6 text-slate-600">Selecciona el sistema operativo y el formato de instalación.</p></div><button type="button" class="focusable grid h-10 w-10 place-items-center rounded-full border border-line text-xl text-slate-500 hover:bg-soft" data-download-close aria-label="Cerrar menú de descargas">×</button></div>
+        {Object.entries(downloadOptions).map(([platform, options]) => <div class="mt-7 space-y-3" data-download-options={platform} hidden>{options.map((option) => <button type="button" class="flex w-full cursor-not-allowed items-center gap-4 rounded-2xl border border-line bg-soft px-4 py-4 text-left opacity-75" disabled title="Enlace de descarga pendiente"><i class={`fa-brands ${option.icon} w-7 text-2xl text-center`} style={`color: ${option.color};`} aria-hidden="true"></i><span><strong class="block text-sm font-extrabold">{option.label}</strong><span class="mt-1 block text-xs text-slate-500">{option.detail}</span></span><span class="ml-auto text-xs font-bold text-slate-400">Próximamente</span></button>)}</div>)}
+        <p class="mt-6 text-xs leading-5 text-slate-500">Los instaladores aparecerán aquí cuando estén publicados. La versión web ya está disponible.</p>
+        <a href="https://musicflowapp.net/" class="focusable mt-5 inline-flex min-h-11 items-center justify-center rounded-full bg-pulse px-5 text-sm font-extrabold text-white shadow-glow">Abrir MusicFlow Web</a>
+      </div>
+    </dialog>
 
     <footer id="artistas" class="border-t border-line bg-white px-5 pb-8 pt-16 sm:px-8 lg:px-10">
       <div class="mx-auto grid max-w-7xl gap-12 md:grid-cols-[1.5fr_0.7fr_0.7fr_0.7fr]">
@@ -335,5 +360,24 @@ const mobileNav = [
       </div>
       <div class="mx-auto mt-14 max-w-7xl border-t border-line pt-6 text-center text-xs text-slate-400">© 2026 MusicFlow. Todos los derechos reservados.</div>
     </footer>
+    <script>
+      const downloadDialog = document.querySelector('#download-dialog');
+      const downloadTitle = document.querySelector('#download-dialog-title');
+      const downloadLabel = document.querySelector('#download-dialog-label');
+      const optionGroups = document.querySelectorAll('[data-download-options]');
+
+      document.querySelectorAll('[data-download-platform]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const platform = button.dataset.downloadPlatform;
+          optionGroups.forEach((group) => { group.hidden = group.dataset.downloadOptions !== platform; });
+          downloadLabel.textContent = platform === 'mobile' ? 'Descargas móviles' : 'Descargas de escritorio';
+          downloadTitle.textContent = platform === 'mobile' ? 'Elige tu dispositivo' : 'Elige tu sistema';
+          downloadDialog?.showModal();
+        });
+      });
+
+      document.querySelector('[data-download-close]')?.addEventListener('click', () => downloadDialog?.close());
+      downloadDialog?.addEventListener('click', (event) => { if (event.target === downloadDialog) downloadDialog.close(); });
+    </script>
   </body>
 </html>
