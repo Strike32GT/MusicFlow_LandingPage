@@ -88,7 +88,7 @@ El portal no debe mencionar monetización, ingresos, regalías, porcentajes o ca
 - Móvil: Android se descarga mediante APK; la opción de iPhone no se muestra.
 - Escritorio: el diseño contempla Windows y Linux; la descripción general también menciona macOS como plataforma de escritorio.
 
-El menú de descargas abre una confirmación para ver el tutorial de instalación. Android enlaza al APK publicado. Windows y Linux muestran que el tutorial está próximo a publicarse hasta recibir sus enlaces de instalación. Cada menú presenta un enlace a `/requisitos` con requisitos mínimos y recomendables de la plataforma elegida.
+El menú de descargas abre una confirmación para ver el tutorial de instalación. Android enlaza al APK publicado. Windows y Linux muestran que el tutorial está próximo a publicarse hasta recibir sus enlaces de instalación. Cada menú presenta un enlace a `/requisitos` con requisitos mínimos y recomendables de la plataforma elegida. En el sitio estático, la página lee en el navegador `?plataforma=mobile` o `?plataforma=desktop` para renderizar el contenido correcto. Android recomienda de forma opcional audífonos Bluetooth; escritorio indica Windows 10 de 64 bits como mínimo y compatibilidad Linux con Ubuntu, Debian y Arch Linux.
 
 ## Planes
 
