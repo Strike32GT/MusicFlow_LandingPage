@@ -85,6 +85,8 @@ Los botones “Iniciar sesión” y “Escuchar ahora” deben abrir la aplicaci
 - Identidad visual clara, luminosa y predominantemente azul; evitar regresar a una paleta excesivamente oscura.
 - El logo oficial es `assets/music-flow.png` y se utiliza en navbar, hero y tabla comparativa.
 - El logo principal del hero tiene una animación vertical suave y debe respetar reducción de movimiento.
+- La visualización de EQ anima las diez bandas de abajo hacia arriba y su estado activo se expresa como “ON” con una luz verde brillante.
+- Los títulos principales de la landing, el título de Planes y el título del portal de artistas usan una entrada elegante y deben respetar reducción de movimiento.
 - La tabla comparativa usa `assets/Spotify.png` y `assets/YTMusic.png`.
 - El gráfico del portal de artistas anima sus barras al entrar en el viewport y respeta `prefers-reduced-motion`.
 - El video móvil se reproduce automáticamente, silenciado y en bucle, sin controles de descarga visibles.
