@@ -128,11 +128,12 @@ Elementos distintivos:
 
 - logo oficial flotante en el hero;
 - representación visual de la EQ de diez bandas;
-- bandas de EQ que ascienden de forma escalonada y un indicador “ON” con luz verde para expresar que está activa;
+- bandas de EQ que ascienden de forma escalonada, varían sus niveles de forma dinámica y un indicador “ON” con luz verde para expresar que está activa;
 - videos de demostración de Web, Móvil y Escritorio en reproducción automática;
 - entradas elegantes para los títulos principales, sin interferir con `prefers-reduced-motion`;
 - gráfico de estadísticas que carga al entrar en pantalla;
 - iconos de plataforma y comunidad mediante Font Awesome HTML.
+- tabla comparativa con una entrada escalonada de sus estados y tarjetas de planes que se destacan solo al pasar el cursor; Premium incorpora una corona.
 
 ## Arquitectura técnica
 

@@ -87,14 +87,17 @@ Los botones “Iniciar sesión” y “Escuchar ahora” deben abrir la aplicaci
 - Identidad visual clara, luminosa y predominantemente azul; evitar regresar a una paleta excesivamente oscura.
 - El logo oficial es `assets/music-flow.png` y se utiliza en navbar, hero y tabla comparativa.
 - El logo principal del hero tiene una animación vertical suave y debe respetar reducción de movimiento.
-- La visualización de EQ anima las diez bandas de abajo hacia arriba y su estado activo se expresa como “ON” con una luz verde brillante.
+- La visualización de EQ anima las diez bandas de abajo hacia arriba, después varía sus niveles de manera dinámica y su estado activo se expresa como “ON” con una luz verde brillante.
 - Los títulos principales de la landing, el título de Planes y el título del portal de artistas usan una entrada elegante y deben respetar reducción de movimiento.
 - La tabla comparativa usa `assets/Spotify.png` y `assets/YTMusic.png`.
+- Los estados ✓, –, × de la tabla comparativa entran con transición al aparecer en el viewport.
 - El gráfico del portal de artistas anima sus barras al entrar en el viewport y respeta `prefers-reduced-motion`.
 - El video móvil se reproduce automáticamente, silenciado y en bucle, sin controles de descarga visibles.
 - Las tres miniaturas de plataforma muestran sus videos automáticamente, silenciados y en bucle.
 - Las páginas Documentación, Artistas y Requisitos declaran el favicon de MusicFlow.
 - El portal de artistas revela títulos grandes al desplazarse, anima sus estadísticas y cambia el estado de carga de las canciones a “Listo”.
+- El panel de subida de artistas no muestra etiquetas “Borrador” ni “Pendiente”.
+- La documentación muestra iconos de Chrome, Firefox, Brave, Safari y Edge en sus requisitos web. Las tarjetas Free y Premium responden solamente al hover; Premium incluye una corona.
 - La documentación debe explicar las funciones en lenguaje comprensible y con precisión técnica, sin inventar capacidades.
 - Los atajos de teclado no tienen una sección propia; cualquier aclaración debe mantenerse en preguntas frecuentes.
 

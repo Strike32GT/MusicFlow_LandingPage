@@ -271,6 +271,20 @@
     line-height: 1.65;
   }
 
+  .plan-card {
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  }
+
+  .plan-card:hover {
+    transform: translateY(-6px);
+    border-color: #176bee;
+    box-shadow: 0 18px 36px rgba(23, 107, 238, 0.14);
+  }
+
+  .plan-card-premium:hover {
+    box-shadow: 0 20px 42px rgba(23, 107, 238, 0.22);
+  }
+
   .doc-content blockquote {
     margin-top: 22px;
     border-left: 3px solid #176bee;
@@ -382,6 +396,32 @@
   .equalizer-line-7 { animation-delay: 490ms; }
   .equalizer-line-8 { animation-delay: 560ms; }
   .equalizer-line-9 { animation-delay: 630ms; }
+
+  .equalizer-line.is-live {
+    animation: none;
+    transform: scaleY(var(--live-level, 1));
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1), background 700ms ease;
+  }
+
+  .equalizer-line.is-live::after {
+    transition: bottom 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .comparison-status {
+    opacity: 0;
+    transform: scale(0.45) rotate(-18deg);
+  }
+
+  .comparison-table.is-visible .comparison-status {
+    animation: comparison-status-in 440ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--comparison-delay);
+  }
+
+  @keyframes comparison-status-in {
+    0% { opacity: 0; transform: scale(0.45) rotate(-18deg); }
+    70% { opacity: 1; transform: scale(1.16) rotate(4deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0); }
+  }
 
   @keyframes equalizer-rise {
     0% { transform: scaleY(0); }

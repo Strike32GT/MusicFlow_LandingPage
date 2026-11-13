@@ -287,7 +287,7 @@ const downloadOptions = {
             <h2 class="mt-4 font-display text-4xl font-extrabold tracking-[-0.035em] sm:text-5xl">¿Por qué MusicFlow?</h2>
             <p class="mt-5 text-lg text-slate-600">Compara lo que ofrecemos frente a Spotify y YouTube Music.</p>
           </div>
-          <div class="mt-14 overflow-x-auto rounded-3xl border border-line bg-white shadow-card">
+          <div class="comparison-table mt-14 overflow-x-auto rounded-3xl border border-line bg-white shadow-card" data-comparison-table>
             <table class="w-full min-w-[760px] border-collapse text-left">
               <thead>
                 <tr class="bg-soft">
@@ -298,11 +298,11 @@ const downloadOptions = {
                 </tr>
               </thead>
               <tbody>
-                {comparison.map((row) => (
+                {comparison.map((row, rowIndex) => (
                   <tr class="border-t border-line">
                     <th scope="row" class="px-6 py-4 text-sm font-bold"><span class="block">{row.feature}</span>{row.note && <span class="mt-1 block text-xs font-normal text-slate-400">{row.note}</span>}</th>
-                    {[row.musicflow, row.spotify, row.youtube].map((status) => (
-                      <td class="px-6 py-4 text-center"><span class={`mx-auto grid h-7 w-7 place-items-center rounded-full text-sm font-extrabold ${statusClass[status]}`} aria-label={status === 'yes' ? 'Incluido' : status === 'partial' ? 'Parcial o limitado' : 'No disponible'}>{status === 'yes' ? '✓' : status === 'partial' ? '–' : '×'}</span></td>
+                    {[row.musicflow, row.spotify, row.youtube].map((status, statusIndex) => (
+                      <td class="px-6 py-4 text-center"><span class={`comparison-status mx-auto grid h-7 w-7 place-items-center rounded-full text-sm font-extrabold ${statusClass[status]}`} style={`--comparison-delay:${(rowIndex * 3 + statusIndex) * 55}ms`} aria-label={status === 'yes' ? 'Incluido' : status === 'partial' ? 'Parcial o limitado' : 'No disponible'}>{status === 'yes' ? '✓' : status === 'partial' ? '–' : '×'}</span></td>
                     ))}
                   </tr>
                 ))}
@@ -418,6 +418,36 @@ const downloadOptions = {
         });
       });
       document.querySelector('[data-tutorial-close]')?.addEventListener('click', () => tutorialDialog?.close());
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const comparisonTable = document.querySelector('[data-comparison-table]');
+      if (comparisonTable && !reducedMotion && 'IntersectionObserver' in window) {
+        const comparisonObserver = new IntersectionObserver(([entry]) => {
+          if (entry.isIntersecting) {
+            comparisonTable.classList.add('is-visible');
+            comparisonObserver.unobserve(comparisonTable);
+          }
+        }, { threshold: 0.2 });
+        comparisonObserver.observe(comparisonTable);
+      } else {
+        comparisonTable?.classList.add('is-visible');
+      }
+
+      const equalizerLines = document.querySelectorAll('.equalizer-line');
+      if (!reducedMotion && equalizerLines.length) {
+        const updateEqualizer = () => {
+          equalizerLines.forEach((line) => {
+            const level = Math.floor(25 + Math.random() * 65);
+            line.classList.add('is-live');
+            line.style.setProperty('--level', `${level}%`);
+            line.style.setProperty('--live-level', `${level / 100}`);
+          });
+        };
+        window.setTimeout(() => {
+          updateEqualizer();
+          window.setInterval(updateEqualizer, 1250);
+        }, 1450);
+      }
 
       document.querySelectorAll('#inicio h1, #caracteristicas h2, #plataformas h2, #comparativa h2, #comunidad h2').forEach((title) => {
         title.classList.add('landing-title');
