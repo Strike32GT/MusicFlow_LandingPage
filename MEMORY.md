@@ -63,7 +63,7 @@ Los botones “Iniciar sesión” y “Escuchar ahora” deben abrir la aplicaci
 - El menú móvil ofrece Android mediante APK. La opción de iPhone fue eliminada.
 - El menú de escritorio contempla Windows `.exe` y Linux mediante instalador o MediaFire.
 - La ruta `/requisitos` se resuelve en el navegador con `?plataforma=mobile` o `?plataforma=desktop`, ya que el sitio se genera estáticamente. No sustituir esta lógica por `Astro.url.searchParams`.
-- Android muestra requisitos mínimos y recomendables propios; los audífonos Bluetooth son recomendables y opcionales. Escritorio exige como mínimo Windows 10 de 64 bits o una distribución Linux Ubuntu, Debian o Arch Linux compatible.
+- Android muestra una tabla de requisitos mínimos y recomendables: Android 7.0/API 24 (mínimo) y Android 12/API 31 o posterior (recomendado), descarga APK release de 64.44 MB, almacenamiento, conectividad y audio. La tabla excluye procesador, RAM y pantalla. Escritorio exige como mínimo Windows 10 de 64 bits o una distribución Linux Ubuntu, Debian o Arch Linux compatible.
 - El enlace Android está publicado. Los enlaces de Windows y Linux siguen pendientes y se presentan con un tutorial de instalación próximo a publicarse.
 - Cuando el usuario entregue los enlaces, actualizar el menú, este archivo y `CONTEXT.md`, validar las descargas y regenerar `dist/`.
 
