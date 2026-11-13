@@ -85,10 +85,10 @@ El portal no debe mencionar monetización, ingresos, regalías, porcentajes o ca
 ## Plataformas y descargas
 
 - Web: disponible en `https://musicflowapp.net/` y no requiere instalación.
-- Móvil: el diseño contempla Android y Apple.
+- Móvil: Android se descarga mediante APK; la opción de iPhone no se muestra.
 - Escritorio: el diseño contempla Windows y Linux; la descripción general también menciona macOS como plataforma de escritorio.
 
-El menú de descargas existe, pero los enlaces finales de los instaladores móviles y de escritorio siguen pendientes. Hasta recibirlos, la interfaz debe comunicar “Próximamente” y no crear enlaces falsos.
+El menú de descargas abre una confirmación para ver el tutorial de instalación. Android enlaza al APK publicado. Windows y Linux muestran que el tutorial está próximo a publicarse hasta recibir sus enlaces de instalación. Cada menú presenta un enlace a `/requisitos` con requisitos mínimos y recomendables de la plataforma elegida.
 
 ## Planes
 
@@ -128,7 +128,7 @@ Elementos distintivos:
 
 - logo oficial flotante en el hero;
 - representación visual de la EQ de diez bandas;
-- video de demostración móvil en reproducción automática;
+- videos de demostración de Web, Móvil y Escritorio en reproducción automática;
 - gráfico de estadísticas que carga al entrar en pantalla;
 - iconos de plataforma y comunidad mediante Font Awesome HTML.
 

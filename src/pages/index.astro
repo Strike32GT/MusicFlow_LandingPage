@@ -91,12 +91,11 @@ const mobileNav = [
 
 const downloadOptions = {
   mobile: [
-    { label: 'Android', detail: 'Archivo APK · enlace de descarga pendiente', icon: 'fa-android', color: '#17d44f' },
-    { label: 'iPhone y iPad', detail: 'App Store · enlace de descarga pendiente', icon: 'fa-apple', color: '#434945' },
+    { label: 'Android', detail: 'MusicFlow V1 · APK', icon: 'fa-android', color: '#17d44f', href: 'https://pub-6f2b26bf8b324bb89b330c8446a750c0.r2.dev/Mobile/Android/MusicFlowV1-Mobile.apk', download: true },
   ],
   desktop: [
-    { label: 'Windows', detail: 'Instalador .exe · enlace de descarga pendiente', icon: 'fa-windows', color: '#17a5d4' },
-    { label: 'Linux', detail: 'MediaFire / instalador · enlace de descarga pendiente', icon: 'fa-linux', color: '#000000' },
+    { label: 'Windows', detail: 'Instalador · tutorial próximamente', icon: 'fa-windows', color: '#17a5d4', href: null },
+    { label: 'Linux', detail: 'Instalador · tutorial próximamente', icon: 'fa-linux', color: '#000000', href: null },
   ],
 };
 ---
@@ -105,6 +104,7 @@ const downloadOptions = {
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/assets/music-flow.png" />
+    <link rel="apple-touch-icon" href="/assets/music-flow.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta
@@ -261,9 +261,9 @@ const downloadOptions = {
             {platforms.map((platform) => (
               <article class="overflow-hidden rounded-3xl border border-line bg-white shadow-card">
                 <div class="platform-stage grid h-64 place-items-center bg-gradient-to-br from-white to-blue-50 p-8" aria-hidden="true">
-                  {platform.type === 'web' && <div class="browser-mock"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-body"><span class="mock-sidebar"></span><span class="mock-hero"></span><span class="mock-line line-a"></span><span class="mock-line line-b"></span></div></div>}
+                  {platform.type === 'web' && <div class="browser-mock"><video class="h-full w-full object-cover" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" aria-label="Demostración web de MusicFlow"><source src="https://pub-379cc6f935d24bca91216ed62a5ed5f3.r2.dev/Video-Demo-WebMusicFlow.mp4" type="video/mp4" /></video></div>}
                   {platform.type === 'mobile' && <div class="phone-video-shell"><video class="pointer-events-none h-full w-full object-cover" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" aria-label="Demostración móvil de MusicFlow"><source src="https://pub-379cc6f935d24bca91216ed62a5ed5f3.r2.dev/MusicFlow_Demo_MObile.mp4" type="video/mp4" /></video></div>}
-                  {platform.type === 'desktop' && <div class="desktop-mock"><div class="desktop-screen"><span class="desktop-sidebar"></span><span class="desktop-content"></span></div><span class="desktop-stand"></span></div>}
+                  {platform.type === 'desktop' && <div class="desktop-mock"><video class="h-full w-full rounded-t-xl object-cover" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" aria-label="Demostración de MusicFlow para escritorio"><source src="https://pub-379cc6f935d24bca91216ed62a5ed5f3.r2.dev/Video-DesktopWindows-MusicFlow.mp4" type="video/mp4" /></video><span class="desktop-stand"></span></div>}
                 </div>
                 <div class="p-7">
                   <h3 class="text-2xl font-extrabold">{platform.title}</h3>
@@ -342,10 +342,15 @@ const downloadOptions = {
     <dialog id="download-dialog" class="w-[min(92vw,31rem)] rounded-3xl border border-line bg-white p-0 text-ink shadow-device backdrop:bg-slate-950/45" aria-labelledby="download-dialog-title">
       <div class="p-6 sm:p-8">
         <div class="flex items-start justify-between gap-5"><div><p class="section-label" id="download-dialog-label">Descargas</p><h2 id="download-dialog-title" class="mt-2 font-display text-3xl font-extrabold">Elige tu versión</h2><p class="mt-3 text-sm leading-6 text-slate-600">Selecciona el sistema operativo y el formato de instalación.</p></div><button type="button" class="focusable grid h-10 w-10 place-items-center rounded-full border border-line text-xl text-slate-500 hover:bg-soft" data-download-close aria-label="Cerrar menú de descargas">×</button></div>
-        {Object.entries(downloadOptions).map(([platform, options]) => <div class="mt-7 space-y-3" data-download-options={platform} hidden>{options.map((option) => <button type="button" class="flex w-full cursor-not-allowed items-center gap-4 rounded-2xl border border-line bg-soft px-4 py-4 text-left opacity-75" disabled title="Enlace de descarga pendiente"><i class={`fa-brands ${option.icon} w-7 text-2xl text-center`} style={`color: ${option.color};`} aria-hidden="true"></i><span><strong class="block text-sm font-extrabold">{option.label}</strong><span class="mt-1 block text-xs text-slate-500">{option.detail}</span></span><span class="ml-auto text-xs font-bold text-slate-400">Próximamente</span></button>)}</div>)}
-        <p class="mt-6 text-xs leading-5 text-slate-500">Los instaladores aparecerán aquí cuando estén publicados. La versión web ya está disponible.</p>
+        {Object.entries(downloadOptions).map(([platform, options]) => <div class="mt-7 space-y-3" data-download-options={platform} hidden>{options.map((option) => <div class="flex items-center gap-3 rounded-2xl border border-line bg-soft p-4"><i class={`fa-brands ${option.icon} w-7 text-center text-2xl`} style={`color: ${option.color};`} aria-hidden="true"></i><div class="min-w-0 flex-1"><strong class="block text-sm font-extrabold">{option.label}</strong><span class="mt-1 block text-xs text-slate-500">{option.detail}</span></div>{option.href ? <a href={option.href} class="focusable rounded-full bg-pulse px-4 py-2 text-xs font-extrabold text-white" data-download-link={platform} download={option.download ? true : undefined}>Descargar</a> : <button type="button" class="focusable rounded-full bg-pulse px-4 py-2 text-xs font-extrabold text-white" data-download-pending={platform}>Descargar</button>}</div>)}</div>)}
+        <p class="mt-6 text-xs leading-5 text-slate-500">Consulta los requisitos de instalación antes de descargar. La guía de instalación en video estará disponible próximamente.</p>
+        <div class="mt-4 flex flex-wrap gap-3"><a href="/requisitos?plataforma=mobile" data-requirements-link="mobile" class="focusable inline-flex min-h-10 items-center rounded-full border border-line bg-white px-4 text-xs font-extrabold text-pulse">Requisitos</a><a href="/requisitos?plataforma=desktop" data-requirements-link="desktop" class="focusable inline-flex min-h-10 items-center rounded-full border border-line bg-white px-4 text-xs font-extrabold text-pulse">Requisitos escritorio</a></div>
         <a href="https://musicflowapp.net/" class="focusable mt-5 inline-flex min-h-11 items-center justify-center rounded-full bg-pulse px-5 text-sm font-extrabold text-white shadow-glow">Abrir MusicFlow Web</a>
       </div>
+    </dialog>
+
+    <dialog id="tutorial-dialog" class="w-[min(92vw,42rem)] rounded-3xl border border-line bg-white p-0 text-ink shadow-device backdrop:bg-slate-950/45" aria-labelledby="tutorial-title">
+      <div class="p-6 sm:p-8"><div class="flex items-start justify-between gap-5"><div><p class="section-label">Instalación</p><h2 id="tutorial-title" class="mt-2 font-display text-2xl font-extrabold">¿Te gustaría ver el tutorial?</h2><p class="mt-2 text-sm text-slate-600">El video de instalación estará disponible próximamente.</p></div><button type="button" class="focusable grid h-10 w-10 place-items-center rounded-full border border-line text-xl text-slate-500 hover:bg-soft" data-tutorial-close aria-label="Cerrar">×</button></div><div class="mt-6 flex gap-3" data-tutorial-choices><button type="button" class="focusable rounded-full bg-pulse px-5 py-3 text-sm font-extrabold text-white" data-tutorial-answer="yes">Sí, ver tutorial</button><button type="button" class="focusable rounded-full border border-line px-5 py-3 text-sm font-extrabold" data-tutorial-answer="no">No, continuar</button></div><div class="mt-6" data-tutorial-video hidden><div class="grid aspect-video place-items-center rounded-2xl bg-soft p-6 text-center"><div><span class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-blue-100 text-pulse"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 8v4l3 2m6-2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg></span><p class="mt-4 font-extrabold">Tutorial próximamente</p><p class="mt-1 text-sm text-slate-500">Publicaremos aquí el video de instalación.</p></div></div></div></div>
     </dialog>
 
     <footer id="artistas" class="border-t border-line bg-white px-5 pb-8 pt-16 sm:px-8 lg:px-10">
@@ -370,6 +375,7 @@ const downloadOptions = {
         button.addEventListener('click', () => {
           const platform = button.dataset.downloadPlatform;
           optionGroups.forEach((group) => { group.hidden = group.dataset.downloadOptions !== platform; });
+          document.querySelectorAll('[data-requirements-link]').forEach((link) => { link.hidden = link.dataset.requirementsLink !== platform; });
           downloadLabel.textContent = platform === 'mobile' ? 'Descargas móviles' : 'Descargas de escritorio';
           downloadTitle.textContent = platform === 'mobile' ? 'Elige tu dispositivo' : 'Elige tu sistema';
           downloadDialog?.showModal();
@@ -378,6 +384,37 @@ const downloadOptions = {
 
       document.querySelector('[data-download-close]')?.addEventListener('click', () => downloadDialog?.close());
       downloadDialog?.addEventListener('click', (event) => { if (event.target === downloadDialog) downloadDialog.close(); });
+
+      const tutorialDialog = document.querySelector('#tutorial-dialog');
+      document.querySelectorAll('[data-download-link], [data-download-pending]').forEach((control) => {
+        control.addEventListener('click', (event) => {
+          const platform = control.dataset.downloadLink || control.dataset.downloadPending;
+          const downloadHref = control.dataset.downloadLink ? control.href : null;
+          if (!downloadHref) event.preventDefault();
+          event.preventDefault();
+          if (tutorialDialog) {
+            tutorialDialog.dataset.downloadHref = downloadHref || '';
+            tutorialDialog.dataset.platform = platform;
+            tutorialDialog.showModal();
+          }
+        });
+      });
+
+      document.querySelectorAll('[data-tutorial-answer]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const wantsTutorial = button.dataset.tutorialAnswer === 'yes';
+          const tutorialChoices = document.querySelector('[data-tutorial-choices]');
+          const tutorialVideo = document.querySelector('[data-tutorial-video]');
+          const downloadHref = tutorialDialog?.dataset.downloadHref;
+          if (!wantsTutorial && downloadHref) window.location.href = downloadHref;
+          if (wantsTutorial) {
+            tutorialChoices?.setAttribute('hidden', '');
+            tutorialVideo?.removeAttribute('hidden');
+          }
+          if (!wantsTutorial) tutorialDialog?.close();
+        });
+      });
+      document.querySelector('[data-tutorial-close]')?.addEventListener('click', () => tutorialDialog?.close());
     </script>
   </body>
 </html>

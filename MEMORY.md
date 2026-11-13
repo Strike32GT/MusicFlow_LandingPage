@@ -51,15 +51,18 @@ Si una validación requiere una dependencia no instalada, no instalarla ni modif
 - Instagram: `https://www.instagram.com/musicflow_oficial/`
 - Discord: `https://discord.gg/M5gZ5Dbfp`
 - Video demo móvil: `https://pub-379cc6f935d24bca91216ed62a5ed5f3.r2.dev/MusicFlow_Demo_MObile.mp4`
+- Video demo web: `https://pub-379cc6f935d24bca91216ed62a5ed5f3.r2.dev/Video-Demo-WebMusicFlow.mp4`
+- Video demo de escritorio: `https://pub-379cc6f935d24bca91216ed62a5ed5f3.r2.dev/Video-DesktopWindows-MusicFlow.mp4`
+- APK Android: `https://pub-6f2b26bf8b324bb89b330c8446a750c0.r2.dev/Mobile/Android/MusicFlowV1-Mobile.apk`
 
 Los botones “Iniciar sesión” y “Escuchar ahora” deben abrir la aplicación principal. Todos los botones “Crear perfil” o “Crear perfil de artista” deben abrir el acceso para artistas.
 
 ## Descargas
 
 - Web abre directamente `https://musicflowapp.net/`.
-- El menú móvil contempla Android y Apple.
+- El menú móvil ofrece Android mediante APK. La opción de iPhone fue eliminada.
 - El menú de escritorio contempla Windows `.exe` y Linux mediante instalador o MediaFire.
-- Los enlaces reales de Android, Apple, Windows y Linux todavía no fueron proporcionados. Deben permanecer identificados como pendientes; nunca inventar URLs ni dirigir a archivos inexistentes.
+- El enlace Android está publicado. Los enlaces de Windows y Linux siguen pendientes y se presentan con un tutorial de instalación próximo a publicarse.
 - Cuando el usuario entregue los enlaces, actualizar el menú, este archivo y `CONTEXT.md`, validar las descargas y regenerar `dist/`.
 
 ## Datos funcionales verificados
@@ -85,6 +88,9 @@ Los botones “Iniciar sesión” y “Escuchar ahora” deben abrir la aplicaci
 - La tabla comparativa usa `assets/Spotify.png` y `assets/YTMusic.png`.
 - El gráfico del portal de artistas anima sus barras al entrar en el viewport y respeta `prefers-reduced-motion`.
 - El video móvil se reproduce automáticamente, silenciado y en bucle, sin controles de descarga visibles.
+- Las tres miniaturas de plataforma muestran sus videos automáticamente, silenciados y en bucle.
+- Las páginas Documentación, Artistas y Requisitos declaran el favicon de MusicFlow.
+- El portal de artistas revela títulos grandes al desplazarse, anima sus estadísticas y cambia el estado de carga de las canciones a “Listo”.
 - La documentación debe explicar las funciones en lenguaje comprensible y con precisión técnica, sin inventar capacidades.
 - Los atajos de teclado no tienen una sección propia; cualquier aclaración debe mantenerse en preguntas frecuentes.
 
